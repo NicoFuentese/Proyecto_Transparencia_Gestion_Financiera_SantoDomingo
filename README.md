@@ -1,11 +1,9 @@
 
   # Portal de Transparencia
 
-  This is a code bundle for Portal de Transparencia. The original project is available at https://www.figma.com/design/ZbECgN7h75nc7IG3SfVIry/Portal-de-Transparencia.
+  ## Instalar dependencias
+  Run `npm install` to install the dependencies.
 
-  ## Running the code
-
-  Run `npm i` to install the dependencies.
-
+  ## Correr el proyecto
   Run `npm run dev` to start the development server.
   
