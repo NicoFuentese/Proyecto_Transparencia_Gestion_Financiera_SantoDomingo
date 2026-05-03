@@ -9,14 +9,13 @@
 **Tema:**
 Tema 33: Portal de Transparencia para la Municipalidad de Santo Domingo.
 
-## Cómo ejecutar el proyecto
+# Cómo ejecutar el proyecto
 
 ### Instalar dependencias
   Run `npm install` to install the dependencies.
 
 ### Correr el proyecto
   Run `npm run dev` to start the development server.
-
 
 
 ---
