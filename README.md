@@ -9,16 +9,36 @@
 **Tema:**
 Tema 33: Portal de Transparencia para la Municipalidad de Santo Domingo.
 
-# Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
-### Instalar dependencias
-  Run `npm install` to install the dependencies.
+Para asegurar la ejecución del Portal de Transparencia en el entorno de desarrollo local, se deben seguir los siguientes pasos:
 
-### Correr el proyecto
-  Run `npm run dev` to start the development server.
+### 1. Requisitos Previos
+Antes de iniciar, es necesario verificar que el entorno de desarrollo cuente con las siguientes herramientas instaladas:
+*   **Node.js**: Versión LTS recomendada (v18.x o superior).
+*   **Gestor de paquetes**: `npm` (incluido con Node.js) o `yarn`.
+*   **Git**: Para el control de versiones y clonación del repositorio.
 
+### 2. Clonación del Repositorio
+Obtener una copia local del código fuente ejecutando el siguiente comando en la terminal:
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd <NOMBRE_DE_LA_CARPETA_DEL_PROYECTO>
+```
 
----
+### 3. Instalación de Dependencias
+Instalar todas las librerías base necesarias para el funcionamiento de la interfaz y las herramientas de desarrollo del proyecto:
+```bash
+npm install
+```
+
+### 4. Ejecución en Entorno de Desarrollo
+Iniciar el servidor local. Este comando habilitará la recarga en caliente (*Hot Module Replacement*) para reflejar los cambios de desarrollo en tiempo real:
+```bash
+npm run dev
+```
+Una vez inicializado, la terminal indicará la ruta de acceso local (habitualmente `http://localhost:3000` o `http://localhost:5173`) para visualizar el portal en el navegador.
+
 
 ## Introducción
 
