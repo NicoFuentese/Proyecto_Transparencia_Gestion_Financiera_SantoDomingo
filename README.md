@@ -46,9 +46,7 @@ Aunque la Municipalidad de Santo Domingo cumple con la Ley 20.285 sobre Acceso a
 
 Para abordar esta limitación, identificada por el municipio como "Falta de transparencia en la gestión financiera", este proyecto detalla el diseño e implementación de un portal ciudadano multiplataforma. La solución técnica se centra en procesar, reorganizar y visualizar de manera dinámica los datos financieros crudos, reduciendo la fricción en el acceso a la información y permitiendo una evaluación clara del estado presupuestario municipal por parte de usuarios sin formación técnica.
 
-El presente repositorio corresponde a la Entrega Parcial 1 de la asignatura Ingeniería Web y Móvil (ICI 4247), y establece los cimientos analíticos y arquitectónicos del sistema. Para mantener la coherencia del relato técnico, la exposición de los contenidos adopta una progresión lógica que va desde la abstracción del problema hasta su implementación tecnológica, omitiendo el orden numérico estricto de la rúbrica de evaluación.
-
-De este modo, el informe detalla inicialmente la justificación del problema y el usuario objetivo, seguido de la especificación de requerimientos funcionales y no funcionales y la arquitectura de navegación y experiencia de usuario.
+El presente repositorio corresponde a la Entrega Parcial 1 de la asignatura Ingeniería Web y Móvil (ICI 4247), y establece los cimientos analíticos y arquitectónicos del sistema. De este modo, el README detalla inicialmente la justificación del problema y el usuario objetivo, seguido de la especificación de requerimientos funcionales y no funcionales y la arquitectura de navegación y experiencia de usuario.
 
 ## Justificación
 
@@ -70,21 +68,11 @@ El caso particular de Santo Domingo se inscribe en este patrón. Durante la reun
 
 El problema, por tanto, no es la ausencia de información, sino su inaccesibilidad práctica: información publicada en formatos crudos, fragmentada temporal y temáticamente, sin contextualización, sin lenguaje ciudadano y sin posibilidad de manipulación dinámica. La consecuencia es la erosión del control social y de la rendición de cuentas que la propia Ley 20.285 buscaba habilitar.
 
-### Pertinencia de una solución web y móvil
-
-La elección de una plataforma web responsive con enfoque *mobile-first* se justifica por tres razones.
-
-Primero, continuidad con el canal natural del derecho: la transparencia activa se ejerce, por mandato legal, a través de sitios electrónicos (Ley 20.285, Art. 7º). Una solución web no genera fricción con los hábitos de consulta ya establecidos, sino que enriquece la capa de presentación de información que ya vive en internet.
-
-Segundo, prevalencia móvil: en Chile, la mayoría de los accesos ciudadanos a sitios públicos ocurre desde dispositivos móviles, por lo que el diseño debe priorizar pantallas pequeñas (>= 320 px) sin sacrificar la experiencia en escritorio. Esto se refleja en el RNF de diseño *responsive mobile-first* especificado en el numeral 3.
-
-Por último, sostenibilidad operativa: el modelo propuesto se construye sobre los archivos CSV que el municipio ya produce y publica, sin demandar trabajo adicional al equipo de transparencia más allá de la carga mensual existente. Esto fue una restricción explícita de la contraparte municipal y se traduce en el RF de carga y procesamiento automatizado de archivos CSV (numeral 5 del listado de requerimientos funcionales).
-
 ### Usuario objetivo
 
 La plataforma contempla dos roles diferenciados, alineados con el RF de autenticación por roles.
 
-**Rol primario — Ciudadano (acceso público, sin registro).** Vecinos de Santo Domingo, periodistas locales y de medios regionales, dirigentes vecinales, organizaciones de la sociedad civil, estudiantes e investigadores que requieren consultar la gestión financiera del municipio. Se trata de un usuario heterogéneo en edad y formación, mayoritariamente sin conocimientos técnicos contables o presupuestarios, que accede de forma intermitente —típicamente ante una duda puntual o un evento que activa el interés (cuenta pública, controversia local, postulación a beneficios)— y desde dispositivos móviles. Sus necesidades centrales son: (i) responder preguntas concretas sin necesidad de recorrer todo el portal, (ii) comparar períodos, (iii) entender cifras agregadas en lenguaje cotidiano, y (iv) descargar evidencia para reutilizarla.
+**Rol primario — Ciudadano (acceso público, sin registro).** Vecinos de Santo Domingo, periodistas locales y de medios regionales, dirigentes vecinales, organizaciones de la sociedad civil, estudiantes e investigadores que requieren consultar la gestión financiera del municipio. Se trata de un usuario heterogéneo en edad y formación, mayoritariamente sin conocimientos técnicos contables o presupuestarios, que accede de forma intermitente (típicamente ante una duda puntual o un evento que activa el interés) y desde dispositivos móviles. Sus necesidades centrales son responder preguntas concretas sin necesidad de recorrer todo el portal, comparar períodos, entender cifras agregadas en lenguaje cotidiano, y (iv) descargar evidencia para reutilizarla.
 
 **Rol secundario — Administrador Municipal (acceso autenticado).** Funcionario o funcionaria de la unidad de transparencia o del área de comunicaciones del municipio, responsable de la carga mensual de los archivos CSV correspondientes a cada categoría obligatoria. Su perfil es el de un usuario administrativo recurrente con conocimiento del dominio normativo pero sin competencias avanzadas de desarrollo. Sus necesidades son operativas: una interfaz protegida con autenticación robusta (JWT, según el RNF de seguridad), procesos de carga simples sin edición de código, validaciones automáticas que prevengan errores de formato y trazabilidad de las cargas realizadas.
 
@@ -94,7 +82,7 @@ Este proyecto se justifica como una respuesta concreta a una brecha documentada 
 
 ## Requerimientos del sistema
 
-A partir del problema documentado en la Sección 2 y de los dos perfiles de usuario identificados, esta sección operacionaliza la propuesta de solución mediante la especificación de los requerimientos funcionales (RF) y no funcionales (RNF) que el sistema debe satisfacer. Los requerimientos se desprenden directamente de las necesidades expuestas: el ciudadano necesita información comprensible, filtrable y descargable; el administrador municipal necesita un mecanismo de carga sostenible y seguro; ambos comparten la exigencia de que la plataforma sea accesible, responsiva y respete los lineamientos del Framework Digital del Gobierno de Chile, alineado con los estándares WCAG 2.1.
+A partir del problema documentado en la  sección previa y de los dos perfiles de usuario identificados, esta sección operacionaliza la propuesta de solución mediante la especificación de los requerimientos funcionales (RF) y no funcionales (RNF) que el sistema debe satisfacer. Los requerimientos se desprenden directamente de las necesidades expuestas: el ciudadano necesita información comprensible, filtrable y descargable; el administrador municipal necesita un mecanismo de carga sostenible y seguro; ambos comparten la exigencia de que la plataforma sea accesible, responsiva y respete los lineamientos del Framework Digital del Gobierno de Chile, alineado con los estándares WCAG 2.1.
 
 Cada requerimiento se identifica mediante un código único (`RF-XX` o `RNF-XX`), un actor responsable, una descripción funcional y un criterio de aceptación medible que permitirá su verificación durante las entregas posteriores.
 
