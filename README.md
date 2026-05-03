@@ -128,6 +128,32 @@ Los requerimientos cuyo actor es exclusivamente el Administrador (`RF-10`, `RF-1
 | **RNF-04** | Accesibilidad web (WCAG 2.1 AA) | Usabilidad | La plataforma cumple el nivel WCAG 2.1 AA, alineándose con los lineamientos del Framework Digital del Gobierno: contraste mínimo de 4.5:1 en texto normal, alternativas textuales en gráficos, navegación completa por teclado, etiquetas semánticas en formularios y compatibilidad con lectores de pantalla. | Verificación con axe DevTools y Lighthouse sin issues de severidad crítica. Todos los flujos principales (filtrar período, navegar categorías, descargar datos) son completables únicamente con teclado. |
 | **RNF-05** | Lenguaje ciudadano | Usabilidad | Toda información financiera se acompaña de un texto interpretativo ("bajada ciudadana") en lenguaje simple, evitando tecnicismos contables o presupuestarios. Un usuario sin formación técnica debe comprender el dato sin recurrir a fuentes externas. | Cada vista de datos numéricos incluye al menos un párrafo interpretativo de máximo 60 palabras. Nivel de legibilidad "fácil" o superior según el índice Fernández-Huerta. |
 
+## Matriz de trazabilidad
+
+La Tabla relaciona cada requerimiento funcional con la pantalla del prototipo en que se materializa y con la ruta del frontend en que se implementa, definidas con mayor detalle en las secciones previas. La matriz permite verificar la cobertura completa de los requerimientos a lo largo del diseño y la implementación.
+
+### Matriz de trazabilidad RF ↔ pantalla ↔ ruta.
+
+| ID | Pantalla / Componente | Ruta del frontend |
+| :--- | :--- | :--- |
+| **RF-01** | Pantalla principal -- Selector de período | `/` |
+| **RF-02** | Pantalla principal -- Dashboard de cifras | `/` (componente persistente) |
+| **RF-03** | Pantalla de categorías -- Grilla de 10 tarjetas | `/categorias` |
+| **RF-04** | Vistas tabulares: Remuneraciones, Contrataciones, Transferencias | `/remuneraciones`, `/contrataciones`, `/transferencias` |
+| **RF-05** | Vistas con listado de tarjetas: Subsidios, Actos, Auditorías, Trámites, Participación | `/subsidios`, `/actos`, `/auditorias`, `/tramites`, `/participacion` |
+| **RF-06** | Vistas con gráfico: Presupuesto, Transferencias, Contrataciones | `/presupuesto`, `/transferencias`, `/contrataciones` |
+| **RF-07** | Vista jerárquica de Estructura y Organización | `/estructura` |
+| **RF-08** | Componentes de búsqueda y filtros embebidos | Componentes locales en cada vista de detalle |
+| **RF-09** | Tarjetas-resumen estadístico embebidas | Componentes locales en cada vista de detalle |
+| **RF-10** | Bloques educativos contextuales | `/` y vistas de detalle (componentes embebidos) |
+| **RF-11** | Botón *Descargar CSV/PDF* en cada vista de detalle | Endpoint `/api/export/:categoria` |
+| **RF-12** | Botón *Descargar* individual en cada tarjeta | Función local de generación PDF (jsPDF) |
+| **RF-13** | Pantalla de registro público | `/registro` |
+| **RF-14** | Barra de accesibilidad persistente en cabecera | Componente `AccessibilityToolbar` |
+| **RF-15** | Pantalla de login y middleware de autenticación | `/login`, middleware `/admin/*` |
+| **RF-16** | Botón *Cerrar sesión* en cabecera autenticada | Acción local + redirección a `/` |
+| **RF-17** | Panel de carga del Administrador | `/admin` (protegida) |
+
 
 ---
 
