@@ -80,6 +80,9 @@ Este proyecto se justifica como una respuesta concreta a una brecha documentada 
 
 ---
 
+## Descripción del Proyecto
+El **Portal de Transparencia** es una plataforma web diseñada para la Municipalidad de Santo Domingo, que tiene como objetivo principal garantizar a la ciudadanía el derecho a conocer cómo el municipio administra los recursos públicos. Este sistema permite consultar información de forma simple, directa y sin burocracia , cumpliendo con los estándares de la Ley 20.285 sobre Acceso a la Información Pública.
+
 ## Requerimientos del sistema
 
 A partir del problema documentado en la  sección previa y de los dos perfiles de usuario identificados, esta sección operacionaliza la propuesta de solución mediante la especificación de los requerimientos funcionales (RF) y no funcionales (RNF) que el sistema debe satisfacer. Los requerimientos se desprenden directamente de las necesidades expuestas: el ciudadano necesita información comprensible, filtrable y descargable; el administrador municipal necesita un mecanismo de carga sostenible y seguro; ambos comparten la exigencia de que la plataforma sea accesible, responsiva y respete los lineamientos del Framework Digital del Gobierno de Chile, alineado con los estándares WCAG 2.1.
@@ -179,6 +182,114 @@ En el panel de administración, el funcionario accede a una vista dividida en do
 Adicionalmente, el sistema integra una barra de herramientas de accesibilidad persistente en la parte superior de todas las vistas públicas, que permite al usuario activar el modo de alto contraste, ajustar el tamaño de la tipografía en tres niveles e iniciar la lectura del contenido en voz alta. Las preferencias seleccionadas se almacenan localmente y se reaplican automáticamente en visitas posteriores, garantizando una experiencia accesible y persistente conforme a los lineamientos WCAG 2.1 AA.
 
 ---
+
+# Visualización de Prototipado
+
+## Caracteristicas Principales
+El portal esta diseñado para ser iclusivo, incorporando herramientas en la cabecera superior:
+- **Ajuste de Contraste:** Opciones para cambiar a alto contraste o mantener el contraste normal.
+- **Tamaño de Fuente:** Selector dinámico para cambiar el tamaño de la letra (Normal, Grande, Muy Grande).
+- **Asistente de Lectura:** Botón "Leer" (Text-to-speech) para dictado de pantalla.
+
+## Panel de Inicio
+La pagina principal ofrece un resumen rapido del estado del municipio, entregando indicadores claves (ultimas cifras disponibles) con tarjetas de resumenes que muestran el presupuesto ejecutado, y un filtro global, que le permite al usuario seleccionar un mes y un año especifico (ej. Marzo 2026) para contetualizar toda la información del portal.
+
+![Panel de Inicio](./img/portal1.jpg)
+
+![Panel de Inicio](./img/portal2.jpg)
+
+## Navegación y Categoria de Transparencia
+El nucleo del portal se divide en 10 categorias principales de facil acceso:
+
+1. Estructura y Organización
+Muestra el organigrama municipal y detalla las direcciones, departamentos y autoridades (ej. Alcalde, DIDECO, DOM), permitiendo descargar el organigrama completo en PDF.
+
+![Estructura y Organización](./img/organigrama1.jpg)
+![Estructura y Organización](./img/organigrama2.jpg)
+![Estructura y Organización](./img/organigrama3.jpg)
+
+2. Remuneraciones del Personal
+Despliega una tabla con los sueldos brutos y líquidos de los funcionarios, filtrable por cargo e incluye la opción de descargar los datos en formato .csv.
+
+![Remuneraciones](./img/remuneracion1.jpg)
+![Remuneraciones](./img/remuneracion2.jpg)
+
+3. Contrataciones y Compras
+Visualiza licitaciones y contratos vigentes mediante gráficos interactivos distribuidos por tipo (Bienes, Servicios, Equipamiento), junto con un listado detallado de proveedores.
+
+![Contrataciones y Compras](./img/compras1.jpg)
+![Contrataciones y Compras](./img/compras2.jpg)
+
+4. Transferencias de Fondos
+Expone los recursos entregados a organizaciones externas (ej. fundaciones, ONG). Muestra promedios y detalles por institución beneficiaria.
+
+![Transferencias](./img/transferencia1.jpg)
+![Transferencias](./img/transferencia2.jpg)
+
+5. Ejecución Presupuestaria
+Presenta un desglose mediante un gráfico circular del gasto municipal distribuido por áreas como Obras Públicas, Educación, Salud, etc., explicando de forma pedagógica qué significa esto para la comunidad.
+
+![Ejecución Presupuestaria](./img/presupuesto1.jpg)
+![Ejecución Presupuestaria](./img/presupuesto2.jpg)
+
+6. Subsidios y Beneficios Sociales
+Enumera los programas sociales activos (ej. SUF, Subsidio de Agua Potable) mostrando la cantidad de beneficiarios y montos distribuidos, manteniendo el anonimato y protección de datos personales de acuerdo a la ley.
+
+![Subsidios y Beneficios](./img/subsidios1.jpg)
+![Subsidios y Beneficios](./img/subsidios2.jpg)
+![Subsidios y Beneficios](./img/subsidios3.jpg)
+
+7. Actos y Resoluciones Municipales
+Repositorio de decretos, permisos (ej. permisos de edificación, circulación) y licitaciones, con opción directa de descarga de documentos.
+
+![actos](./img/actos1.jpg)
+![actos](./img/actos2.jpg)
+![actos](./img/actos3.jpg)
+
+8. Auditorías e Informes de Control
+Sección dedicada a los resultados de auditorías internas y externas (ej. Contraloría), presentando resúmenes ejecutivos, principales hallazgos y descargas en PDF.
+
+![Auditorías](./img/auditoria1.jpg)
+![Auditorías](./img/auditoria2.jpg)
+![Auditorías](./img/auditoria3.jpg)
+![Auditorías](./img/auditoria4.jpg)
+
+9. Trámites y Servicios
+Un catálogo de servicios municipales (ej. Certificado de Antecedentes, Patente Comercial) que detalla plazos, costos, requisitos y permite iniciar el trámite en línea.
+
+![Trámites y Servicios](./img/tramites1.jpg)
+![Trámites y Servicios](./img/tramites2.jpg)
+![Trámites y Servicios](./img/tramites3.jpg)
+![Trámites y Servicios](./img/tramites4.jpg)
+![Trámites y Servicios](./img/tramites5.jpg)
+
+10. Mecanismos de Participación Ciudadana
+Fomenta el involucramiento ciudadano mostrando instancias como el COSOC, Consultas Ciudadanas y Presupuestos Participativos, con calendarios y opciones de inscripción.
+
+![Participación Ciudadana](./img/participacion1.jpg)
+![Participación Ciudadana](./img/participacion2.jpg)
+![Participación Ciudadana](./img/participacion3.jpg)
+
+## Panel de Administrador
+El prototipo contempla un flujo privado para los funcionarios municipales encargado de mantener la plataforma actualizada, posee 4 caracteristicas destacables:
+- **Acceso Seguro:** Requiere inicio de sesión mediante correo electrónico institucional y contraseña. Para ingresar y probar la implementación: 
+    - usuario: usuario@santodomingo.cl
+    - contraseña: 123456
+
+![login](./img/login.jpg)
+
+- **Carga Masiva de Datos:** Interfaz intuitiva tipo "arrastrar y soltar" para subir archivos .csv.
+
+![login](./img/login2.jpg)
+
+- **Selección de Categoría y Periodo:** El administrador selecciona a qué categoría (ej. Remuneraciones, Presupuesto) y a qué mes/año corresponden los datos antes de cargar.
+
+![categoria](./img/categoria.jpg)
+
+- **Historial de Cargas:** Un registro lateral que confirma visualmente las actualizaciones recientes realizadas en el portal, garantizando la trazabilidad.
+
+![historial](./img/historial.jpg)
+
 
 ## Referencias
 
