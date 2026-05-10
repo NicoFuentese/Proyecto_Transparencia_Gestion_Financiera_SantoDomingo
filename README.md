@@ -9,6 +9,8 @@
 **Tema:**
 Tema 33: Portal de Transparencia para la Municipalidad de Santo Domingo.
 
+LINK Figma: https://www.figma.com/make/ZbECgN7h75nc7IG3SfVIry/Portal-de-Transparencia?t=IT8yK5U4tvxlXPqj-1
+
 ## Cómo ejecutar el proyecto
 
 Para asegurar la ejecución del Portal de Transparencia en el entorno de desarrollo local, se deben seguir los siguientes pasos:
